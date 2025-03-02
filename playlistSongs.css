@@ -1,0 +1,93 @@
+#body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#playlistTitle {
+  color: greenyellow;
+}
+
+#songList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 80%;
+}
+
+#backToPlaylists {
+  background-color: lime;
+  margin: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#backToPlaylists:hover {
+  opacity: 50%;
+}
+#backToPlaylists:active {
+  opacity: 100%;
+  color: darkgreen;
+}
+
+.playlist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #222;
+  border-radius: 10px;
+  border: 2px solid lime;
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+}
+
+.playlist-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 2px solid green;
+}
+
+.playlist-info {
+  flex-grow: 1;
+  color: white;
+}
+
+#trashCan {
+  color: red;
+  margin: 15px;
+  cursor: pointer;
+  opacity: 70%;
+}
+#trashCan:hover {
+  opacity: 100%;
+}
+#trashCan:active {
+  opacity: 50%;
+  color: darkred;
+}
+
+.play-btn {
+  color: green;
+  background-color: lime;
+  cursor: pointer;
+  margin-top: 5px;
+  border: 2px solid lime;
+  border-radius: 50%;
+  opacity: 85%;
+}
+.play-btn:hover {
+  opacity: 100%;
+}
+.play-btn:active {
+  color: green;
+  opacity: 50%;
+}

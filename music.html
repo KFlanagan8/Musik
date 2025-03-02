@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="music.css" />
+  </head>
+  <!-------------------------------------------------------------->
+  <body class="body">
+    <div id="topBtns">
+      <a id="playlist-btn" href="list.html">
+        <i class="fa fa-list fa-3x"></i>
+      </a>
+
+      <div id="searchStuff">
+        <input type="search" placeholder="Search Song..." id="searchBar" />
+        <button id="searchBtn"><i class="fa fa-search"></i></button>
+        <div id="searchResults"></div>
+      </div>
+
+      <a id="favoriteBtn" href="fav.html">
+        <i class="fa fa-star fa-3x"></i>
+      </a>
+    </div>
+
+    <div id="music-player">
+      <audio id="audio-player">
+        <source id="audio-source" type="audio/mp3" />
+      </audio>
+      <!-------------------------------------------------------------->
+      <div id="details">
+        <div id="now-playing">What We Listening to?</div>
+        <div id="track-art"></div>
+        <div id="track-name"></div>
+        <div id="track-artist"></div>
+      </div>
+      <!----------------SLIDERS---------------------------------------------->
+      <div class="slider-container">
+        <div id="current-time">0:00</div>
+        <input
+          id="seek-slider"
+          type="range"
+          value="1"
+          min="0"
+          max="100"
+          step="0.1"
+        />
+        <div id="total-duration">0:00</div>
+      </div>
+
+      <div class="slider-container">
+        <i class="fa fa-volume-down"></i>
+        <input
+          onchange="volume()"
+          type="range"
+          min="1"
+          max="100"
+          value="100"
+          id="volume-slider"
+        />
+        <i class="fa fa-volume-up"></i>
+      </div>
+      <!------------------BUTTONS-------------------------------------------->
+      <div id="buttons">
+        <div id="prev-track" onclick="prevSong() ">
+          <i class="fa fa-step-backward fa-2x"></i>
+        </div>
+        <div id="playButton" onclick="playBtn()">
+          <i class="fa fa-play-circle fa-5x"></i>
+        </div>
+        <div id="next-track" onclick="nextSong()">
+          <i class="fa fa-step-forward fa-2x"></i>
+        </div>
+      </div>
+      <!------------EXTRA BUTTONS-------------------------------------->
+      <div id="extraBtns">
+        <div id="shuffle" onclick="shuffleSongs()">
+          <i class="fa fa-random fa-2x"></i>
+        </div>
+        <div id="addSong" onclick="addToPlaylist(getCurrentSong())">
+          <i class="fa fa-plus fa-2x"></i>
+        </div>
+        <div id="favoriteASong" onclick="addToFavorites(getCurrentSong())">
+          <i class="fa fa-star fa-2x"></i>
+        </div>
+      </div>
+    </div>
+    <!-------------------------------------------------------------->
+    <script src="music.js"></script>
+  </body>
+</html>
