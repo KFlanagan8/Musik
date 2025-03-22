@@ -250,8 +250,11 @@ searchBar.addEventListener("keydown", function () {
   }
 });
 
-searchBtn.addEventListener("touchend", function () {
+searchBar.addEventListener("touchstart", function (event) {
+  event.preventDefault();
+
   const query = searchBar.value.trim();
+
   if (query) {
     searchSongs(query);
   } else {
