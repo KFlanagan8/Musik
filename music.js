@@ -29,19 +29,21 @@ let currentIndex = 0;
 
 let playedSongs = [];
 let allSongs = [];
-const query = searchBar.value.trim();
-
 //------------FOR PHONE USERS----------------------------------------------------------
 playPauseBtn.addEventListener("touchstart", (event) => {
   event.preventDefault();
   playBtn();
 });
 
-searchBtn.addEventListener("touchstart", function (query) {
-  if (!query) {
-    alert("Please enter a search term!");
-  } else {
+searchBtn.addEventListener("touchstart", function (event) {
+  event.preventDefault();
+
+  const query = searchBar.value.trim();
+
+  if (query) {
     searchSongs(query);
+  } else {
+    alert("Please enter a search term!");
   }
 });
 //------------PLAY BUTTON----------------------------------------------------------
