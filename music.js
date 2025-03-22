@@ -35,10 +35,11 @@ playPauseBtn.addEventListener("touchstart", (event) => {
   playBtn();
 });
 
-searchBtn.addEventListener("touchstart", function (event) {
+searchBtn.addEventListener("touchstart", function () {
   const query = searchBar.value.trim();
+
   if (query) {
-    searchSongs(query); // Call searchSongs with the query
+    searchSongs(query);
   } else {
     alert("Please enter a search term!");
   }
