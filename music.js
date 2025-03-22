@@ -196,12 +196,12 @@ function displaySearchResults(results) {
   const resultsContainer = searchResults;
   resultsContainer.innerHTML = "";
 
-  resultsContainer.style.backgroundColor = "lightgreen";
-
   if (results.length === 0) {
     resultsContainer.style.display = "none";
     return;
   }
+
+  alert(results);
 
   results.forEach((song, index) => {
     const songItem = document.createElement("div");
