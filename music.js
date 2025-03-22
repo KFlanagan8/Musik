@@ -35,17 +35,6 @@ playPauseBtn.addEventListener("touchstart", (event) => {
   playBtn();
 });
 
-const query = searchBar.value.trim();
-
-searchBtn.addEventListener("touchstart", function (event) {
-  event.preventDefault();
-
-  if (query) {
-    searchSongs(query);
-  } else {
-    alert("Please enter a search term!");
-  }
-});
 //------------PLAY BUTTON----------------------------------------------------------
 function playBtn() {
   if (!audio.src) {
@@ -229,11 +218,11 @@ function displaySearchResults(results) {
     resultsContainer.appendChild(songItem);
   });
   resultsContainer.style.display = "flex";
-  window.searchResults = results;
+  window.seachResults = results;
 }
 
 function loadSongFromSearch(index) {
-  const song = window.searchResults[index];
+  const song = window.seachResults[index];
   if (song) {
     loadSong(song);
     hideSearchResults();
@@ -258,6 +247,15 @@ searchBar.addEventListener("keydown", function () {
   const query = searchBar.value.trim();
   if (event.key === "Enter") {
     searchSongs(query);
+  }
+});
+
+searchBtn.addEventListener("touchend", function () {
+  const query = searchBar.value.trim();
+  if (query) {
+    searchSongs(query);
+  } else {
+    alert("Please enter a search term!");
   }
 });
 
