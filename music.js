@@ -250,7 +250,7 @@ searchBar.addEventListener("keydown", function () {
   }
 });
 
-searchBar.addEventListener("touchstart", function (event) {
+searchBtn.addEventListener("touchstart", function (event) {
   event.preventDefault();
 
   const query = searchBar.value.trim();
