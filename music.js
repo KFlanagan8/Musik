@@ -38,10 +38,10 @@ playPauseBtn.addEventListener("touchstart", (event) => {
 searchBtn.addEventListener("touchstart", function () {
   const query = searchBar.value.trim();
 
-  if (query) {
-    searchSongs(query);
-  } else {
+  if (!query) {
     alert("Please enter a search term!");
+  } else {
+    searchSongs(query);
   }
 });
 //------------PLAY BUTTON----------------------------------------------------------
