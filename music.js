@@ -29,15 +29,15 @@ let currentIndex = 0;
 
 let playedSongs = [];
 let allSongs = [];
+const query = searchBar.value.trim();
+
 //------------FOR PHONE USERS----------------------------------------------------------
 playPauseBtn.addEventListener("touchstart", (event) => {
   event.preventDefault();
   playBtn();
 });
 
-searchBtn.addEventListener("touchstart", function () {
-  const query = searchBar.value.trim();
-
+searchBtn.addEventListener("touchstart", function (query) {
   if (!query) {
     alert("Please enter a search term!");
   } else {
