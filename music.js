@@ -36,7 +36,7 @@ playPauseBtn.addEventListener("touchstart", (event) => {
 });
 
 searchBtn.addEventListener("touchstart", function (event) {
-  displaySearchResults();
+  searchSongs();
 });
 //------------PLAY BUTTON----------------------------------------------------------
 function playBtn() {
