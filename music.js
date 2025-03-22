@@ -253,7 +253,7 @@ searchBar.addEventListener("keydown", function () {
 searchBtn.addEventListener("touchstart", function (event) {
   event.preventDefault();
 
-  const query = searchBar.value.trim();
+  const query = searchBar.value;
 
   if (query) {
     searchSongs(query);
