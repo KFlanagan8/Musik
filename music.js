@@ -40,11 +40,11 @@ const query = searchBar.value.trim();
 searchBtn.addEventListener("touchstart", function (event) {
   event.preventDefault();
 
-  if (!query) {
+  if (query) {
+    searchSongs(query);
+  } else {
     alert("Please enter a search term!");
   }
-
-  searchSongs(query);
 });
 //------------PLAY BUTTON----------------------------------------------------------
 function playBtn() {
