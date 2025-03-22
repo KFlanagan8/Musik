@@ -196,6 +196,8 @@ function displaySearchResults(results) {
   const resultsContainer = searchResults;
   resultsContainer.innerHTML = "";
 
+  resultsContainer.style.backgroundColor = "lightgreen";
+
   if (results.length === 0) {
     resultsContainer.style.display = "none";
     return;
@@ -253,7 +255,7 @@ searchBar.addEventListener("keydown", function () {
 searchBtn.addEventListener("touchstart", function (event) {
   event.preventDefault();
 
-  const query = searchBar.value;
+  const query = searchBar.value.trim();
 
   if (query) {
     searchSongs(query);
