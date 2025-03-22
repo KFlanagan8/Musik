@@ -31,10 +31,11 @@ let playedSongs = [];
 let allSongs = [];
 //------------FOR PHONE USERS----------------------------------------------------------
 playPauseBtn.addEventListener("touchstart", (event) => {
+  event.preventDefault();
   playBtn();
 });
 
-searchBtn.addEventListener("touchend", function (event) {
+searchBtn.addEventListener("touchstart", function (event) {
   displaySearchResults();
 });
 //------------PLAY BUTTON----------------------------------------------------------
