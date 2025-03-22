@@ -227,11 +227,11 @@ function displaySearchResults(results) {
     resultsContainer.appendChild(songItem);
   });
   resultsContainer.style.display = "flex";
-  window.seachResults = results;
+  window.searchResults = results;
 }
 
 function loadSongFromSearch(index) {
-  const song = window.seachResults[index];
+  const song = window.searchResults[index];
   if (song) {
     loadSong(song);
     hideSearchResults();
