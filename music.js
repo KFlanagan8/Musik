@@ -37,7 +37,7 @@ playPauseBtn.addEventListener("touchstart", (event) => {
 
 const query = searchBar.value.trim();
 
-searchBtn.addEventListener("touchstart", function (event, query) {
+searchBtn.addEventListener("touchstart", function (event) {
   event.preventDefault();
 
   if (!query) {
