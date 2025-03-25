@@ -178,7 +178,13 @@ async function searchSongs(query) {
     const response = await fetch(
       `https://itunes.apple.com/search?term=${encodeURIComponent(
         query
-      )}&media=music&limit=1000&genre=18`
+      )}&media=music&limit=1000&genre=18`,
+      {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        },
+      }
     );
     const data = await response.json();
 
