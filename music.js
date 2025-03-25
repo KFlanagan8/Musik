@@ -201,8 +201,6 @@ function displaySearchResults(results) {
     return;
   }
 
-  alert(results);
-
   results.forEach((song, index) => {
     const songItem = document.createElement("div");
     songItem.classList.add("search-item");
