@@ -257,12 +257,13 @@ searchBar.addEventListener("keypress", function (event) {
     const query = searchBar.value.trim();
     if (query) {
       searchSongs(query);
+    } else {
+      alert("Please enter a search term!");
     }
   }
 });
 
 searchBtn.addEventListener("touchstart", function (event) {
-  event.preventDefault();
   handleSearch();
 });
 
