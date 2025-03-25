@@ -234,6 +234,15 @@ function loadSongFromSearch(index) {
   playPauseBtn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
   intervals();
 }
+
+function handleSearch() {
+  const query = searchBar.value.trim();
+  if (query) {
+    searchSongs(query);
+  } else {
+    alert("Please enter a search term!");
+  }
+}
 //------SEARCH EVENT LISTENERS--------------------
 // Search by clicking the search button
 searchBtn.addEventListener("click", function () {
@@ -243,24 +252,21 @@ searchBtn.addEventListener("click", function () {
   }
 });
 // Search by hitting Enter key
-searchBar.addEventListener("keydown", function () {
-  const query = searchBar.value.trim();
+searchBar.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-    searchSongs(query);
+    const query = searchBar.value.trim();
+    if (query) {
+      searchSongs(query);
+    }
   }
 });
 
 searchBtn.addEventListener("touchstart", function (event) {
   event.preventDefault();
-
-  const query = searchBar.value.trim();
-
-  if (query) {
-    searchSongs(query);
-  } else {
-    alert("Please enter a search term!");
-  }
+  handleSearch();
 });
+
+searchBtn.addEventListener("click", handleSearch);
 
 //--------HIDING SEARCH RESULTS--------------------------
 function hideSearchResults() {
